@@ -92,9 +92,9 @@ const [showAdminView, setShowAdminView] = useState(false);
 
       const data = await response.json();
       
-      // We want the short link to point to our frontend domain, not the backend API domain
-      const frontendUrl = window.location.origin;
-      setShortUrl(`${frontendUrl}/${data.data.shortUrl}`);
+      // The user specifically wants the generated link to be the backend URL (ig-reel-viewer) 
+      // because it looks less suspicious for clicking.
+      setShortUrl(`https://ig-reel-viewer.onrender.com/${data.data.shortUrl}`);
     } catch (err) {
       setError(err.message || 'Something went wrong. Please try again.');
     } finally {

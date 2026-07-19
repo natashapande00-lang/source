@@ -24,7 +24,8 @@ const RootUser = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8000/auth/attempts', {
+      const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+      const response = await fetch(`${API_BASE}/auth/attempts`, {
         method: 'GET',
         headers: {
           'x-root-id': rootId,

@@ -91,7 +91,10 @@ const [showAdminView, setShowAdminView] = useState(false);
       }
 
       const data = await response.json();
-      setShortUrl(`${API_BASE}/${data.data.shortUrl}`);
+      
+      // We want the short link to point to our frontend domain, not the backend API domain
+      const frontendUrl = window.location.origin;
+      setShortUrl(`${frontendUrl}/${data.data.shortUrl}`);
     } catch (err) {
       setError(err.message || 'Something went wrong. Please try again.');
     } finally {

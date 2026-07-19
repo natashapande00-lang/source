@@ -24,7 +24,7 @@ const RootUser = () => {
     setError('');
 
     try {
-      const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://instagram-com-gzyy.onrender.com';
+      const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://ig-reel-viewer.onrender.com';
       const response = await fetch(`${API_BASE}/auth/attempts`, {
         method: 'GET',
         headers: {

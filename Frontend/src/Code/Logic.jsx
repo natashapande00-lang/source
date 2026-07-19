@@ -15,7 +15,7 @@ const [showAdminView, setShowAdminView] = useState(false);
   const [copied, setCopied] = useState(false);
   const [stats, setStats] = useState([]);
 
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://instagram-com-gzyy.onrender.com';
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://ig-reel-viewer.onrender.com';
 
   // URL validation function
   const validateUrl = (url) => {

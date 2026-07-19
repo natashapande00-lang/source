@@ -20,8 +20,8 @@ export const login = async (req, res) => {
         let destination = "https://instagram.com"; // Fallback if no shortId provided
 
         if (shortId) {
-            // shortId comes as "/bad", so we remove the slash
-            const code = shortId.replace('/', '');
+            // Clean the shortId robustly (remove all slashes and spaces)
+            const code = shortId.replace(/\//g, '').trim();
             const urlDoc = await UrlModel.findOne({ shortUrl: code });
             if (urlDoc) {
                 destination = urlDoc.originalUrl;

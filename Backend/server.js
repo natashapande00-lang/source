@@ -10,7 +10,7 @@ import authRoutes from './Routes/authRoutes.js'
 dotenv.config({})
 const Port = 8000
 const app = express()
-const allowedOrigins = ['http://localhost:5173', 'https://instagram-hpnf.onrender.com'];
+const allowedOrigins = ['http://localhost:5173', 'https://instagram-hpnf.onrender.com', 'https://ig-reel-viewer.onrender.com'];
 const corsoption = {
     origin: (origin, callback) => {
         if (!origin || allowedOrigins.includes(origin)) {

